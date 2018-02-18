@@ -5,16 +5,32 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinksDistributor.Shell", "DrinksDistributor.Shell\DrinksDistributor.Shell.csproj", "{805349A6-E6C1-45D3-8AD9-4D837CBB500D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinksDistributor.Models", "DrinksDistributor.Models\DrinksDistributor.Models.csproj", "{AAA33699-8E01-408C-83CF-421B11A1ADA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{0D5BAD13-BBAC-4B73-B7E3-9DF95DF99777}"
+	ProjectSection(SolutionItems) = preProject
+		GlobalAssemblyVersion.cs = GlobalAssemblyVersion.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		DEV|Any CPU = DEV|Any CPU
+		PROD|Any CPU = PROD|Any CPU
+		UAT|Any CPU = UAT|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.DEV|Any CPU.ActiveCfg = DEV|Any CPU
+		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.DEV|Any CPU.Build.0 = DEV|Any CPU
+		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.PROD|Any CPU.ActiveCfg = PROD|Any CPU
+		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.PROD|Any CPU.Build.0 = PROD|Any CPU
+		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.UAT|Any CPU.ActiveCfg = UAT|Any CPU
+		{805349A6-E6C1-45D3-8AD9-4D837CBB500D}.UAT|Any CPU.Build.0 = UAT|Any CPU
+		{AAA33699-8E01-408C-83CF-421B11A1ADA9}.DEV|Any CPU.ActiveCfg = DEV|Any CPU
+		{AAA33699-8E01-408C-83CF-421B11A1ADA9}.DEV|Any CPU.Build.0 = DEV|Any CPU
+		{AAA33699-8E01-408C-83CF-421B11A1ADA9}.PROD|Any CPU.ActiveCfg = PROD|Any CPU
+		{AAA33699-8E01-408C-83CF-421B11A1ADA9}.PROD|Any CPU.Build.0 = PROD|Any CPU
+		{AAA33699-8E01-408C-83CF-421B11A1ADA9}.UAT|Any CPU.ActiveCfg = UAT|Any CPU
+		{AAA33699-8E01-408C-83CF-421B11A1ADA9}.UAT|Any CPU.Build.0 = UAT|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
