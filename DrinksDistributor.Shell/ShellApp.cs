@@ -1,4 +1,5 @@
-﻿using DrinksDistributor.Shell.Forms;
+﻿using DrinksDistributor.Models;
+using DrinksDistributor.Shell.Forms;
 using Microsoft.Practices.CompositeUI;
 using Microsoft.Practices.CompositeUI.WinForms;
 using System;
@@ -17,6 +18,8 @@ namespace DrinksDistributor.Shell
         [STAThread]
         static void Main()
         {
+            DrinksDistributorContext context = new DrinksDistributorContext();
+
             Application.Run(new FormShell());
         }
     }
