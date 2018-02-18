@@ -36,7 +36,17 @@ namespace DrinksDistributor.Models.Entities
         /// <summary>
         /// Drink price currency.
         /// </summary>
-        [Required]
-        public CoinCurrency PriceCurrency { get; set; }
+        public int PriceCurrencyId { get; set; }
+        [Required, ForeignKey("PriceCurrencyId")]
+        public virtual CoinCurrency PriceCurrency { get; set; }
+
+        /// <summary>
+        /// Returns a string representation of the drink.
+        /// </summary>
+        /// <returns>String representation of the drink.</returns>
+        public override string ToString()
+        {
+            return string.Format("{0};{1};{2};{3};[{4}]", Id, Code, Name, Price, PriceCurrency);
+        }
     }
 }

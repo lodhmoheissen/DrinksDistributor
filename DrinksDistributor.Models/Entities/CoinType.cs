@@ -24,8 +24,9 @@ namespace DrinksDistributor.Models.Entities
         /// <summary>
         /// Coin type currency.
         /// </summary>
+        public int CoinCurrencyId { get; set; }
         [Required, ForeignKey("CoinCurrencyId")]
-        public CoinCurrency Currency { get; set; }
+        public virtual CoinCurrency CoinCurrency { get; set; }
 
         /// <summary>
         /// Coin type value.
@@ -37,5 +38,14 @@ namespace DrinksDistributor.Models.Entities
         /// Coin type name.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Returns a string representation of the coin type.
+        /// </summary>
+        /// <returns>String representation of the coin type.</returns>
+        public override string ToString()
+        {
+            return string.Format("{0};{1};[{2}];{3};{4}", Id, Code, CoinCurrency, Value, Name);
+        }
     }
 }

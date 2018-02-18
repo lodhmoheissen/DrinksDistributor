@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 // General Information
 [assembly: AssemblyTitle("DrinksDistributor.Models")]
 [assembly: AssemblyDescription("Models and persistency for the DrinksDistributor project")]
-[assembly: AssemblyCulture("en-us")]
+[assembly: AssemblyCulture("")]
 
 // COM settings
 [assembly: ComVisible(false)]

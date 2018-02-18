@@ -19,7 +19,6 @@ namespace DrinksDistributor.Shell
         static void Main()
         {
             DrinksDistributorContext context = new DrinksDistributorContext();
-
             Application.Run(new FormShell());
         }
     }

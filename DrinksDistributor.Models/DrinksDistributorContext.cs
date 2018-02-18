@@ -38,7 +38,19 @@ namespace DrinksDistributor.Models
         /// </summary>
         public DrinksDistributorContext() : base("DrinksDistributorDb")
         {
+            InitializeDatabase();
+        }
+
+        /// <summary>
+        /// Initialize the database, if not exists.
+        /// </summary>
+        private void InitializeDatabase()
+        {
             Database.SetInitializer(new DrinksDistributorDbInitializer());
+            if (!Database.Exists())
+            {
+                Database.Initialize(true);
+            }
         }
     }
 }
