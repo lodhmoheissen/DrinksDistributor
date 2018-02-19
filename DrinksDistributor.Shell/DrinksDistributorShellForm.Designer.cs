@@ -1,6 +1,6 @@
 ﻿namespace DrinksDistributor.Shell
 {
-    partial class Form1
+    partial class DrinksDistributorShellForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrinksDistributorShellForm));
+            this.SuspendLayout();
+            // 
+            // FormShell
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(878, 544);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormShell";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "DrinkDistributors 0.2";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
