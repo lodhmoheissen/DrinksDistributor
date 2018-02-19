@@ -1,8 +1,6 @@
-﻿using DrinksDistributor.Shell.Helpers;
-
-namespace DrinksDistributor.Shell.Forms
+﻿namespace DrinksDistributor.Shell
 {
-    partial class FormShell
+    partial class DrinksDistributorShellForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +28,7 @@ namespace DrinksDistributor.Shell.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormShell));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrinksDistributorShellForm));
             this.SuspendLayout();
             // 
             // FormShell
@@ -41,7 +39,7 @@ namespace DrinksDistributor.Shell.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormShell";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = string.Format("{0} {1}", "DrinkDistributors", AppHelper.GetAppVersion()) ;
+            this.Text = "DrinkDistributors 0.2";
             this.ResumeLayout(false);
 
         }
