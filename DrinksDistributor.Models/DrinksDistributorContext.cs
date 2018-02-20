@@ -39,6 +39,7 @@ namespace DrinksDistributor.Models
         public DrinksDistributorContext() : base("DrinksDistributorDb")
         {
             InitializeDatabase();
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         /// <summary>

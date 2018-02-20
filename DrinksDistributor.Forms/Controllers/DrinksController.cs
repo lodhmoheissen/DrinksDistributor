@@ -1,5 +1,9 @@
 ﻿using DrinksDistributor.Forms.WorkItems;
+using DrinksDistributor.Models;
+using DrinksDistributor.Models.Entities;
 using Microsoft.Practices.CompositeUI;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DrinksDistributor.Forms.Controllers
 {
@@ -14,6 +18,20 @@ namespace DrinksDistributor.Forms.Controllers
         public DrinksWorkItem DrinksWorkItem
         {
             get { return base.WorkItem as DrinksWorkItem; }
+        }
+
+        /// <summary>
+        /// Load the drinks from db.
+        /// </summary>
+        /// <returns>Drinks from db.</returns>
+        public List<Drink> LoadDrinks()
+        {
+            List<Drink> list = new List<Drink>();
+            using (DrinksDistributorContext dbContext = new DrinksDistributorContext())
+            {
+                list = dbContext.Drinks.Include("PriceCurrency").ToList();
+            }
+            return list;
         }
     }
 }

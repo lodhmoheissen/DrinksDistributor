@@ -18,8 +18,9 @@ namespace DrinksDistributor.Models.Entities
         /// <summary>
         /// Coin type stock.
         /// </summary>
-        [Required, ForeignKey("Id")]
-        public CoinType CoinType { get; set; }
+        public int CoinTypeId { get; set; }
+        [Required, ForeignKey("CoinTypeId")]
+        public virtual CoinType CoinType { get; set; }
 
         /// <summary>
         /// Quantity.
@@ -31,9 +32,9 @@ namespace DrinksDistributor.Models.Entities
         /// Returns a string representation of the coin stock.
         /// </summary>
         /// <returns>String representation of the coin stock.</returns>
-        public override string ToString()
-        {
-            return string.Format("{0};[{1}];{2}", Id, CoinType, Quantity);
-        }
+        //public override string ToString()
+        //{
+        //    return string.Format("{0};[{1}];{2}", Id, CoinType, Quantity);
+        //}
     }
 }

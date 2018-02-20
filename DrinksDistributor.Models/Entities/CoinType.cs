@@ -45,7 +45,8 @@ namespace DrinksDistributor.Models.Entities
         /// <returns>String representation of the coin type.</returns>
         public override string ToString()
         {
-            return string.Format("{0};{1};[{2}];{3};{4}", Id, Code, CoinCurrency, Value, Name);
+            return string.Format("{0}", Name);
+            //return string.Format("{0};{1};[{2}];{3};{4}", Id, Code, CoinCurrency, Value, Name);
         }
     }
 }

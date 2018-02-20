@@ -2,7 +2,6 @@
 using Microsoft.Practices.CompositeUI;
 using Microsoft.Practices.CompositeUI.SmartParts;
 using Microsoft.Practices.CompositeUI.WinForms;
-using System.Drawing;
 
 namespace DrinksDistributor.Forms.WorkItems
 {
@@ -27,13 +26,15 @@ namespace DrinksDistributor.Forms.WorkItems
         /// <param name="parentWorkspace">The Tab workspace.</param>
         public void Generate(IWorkspace parentWorkspace)
         {
+            // TabSmartPart
             _smartPart = new TabSmartPartInfo();
             _smartPart.Title = "Admin";
             _smartPart.ActivateTab = false;
 
-            _adminView = Items.AddNew<AdminView>();
+            _adminView = this.SmartParts.AddNew<AdminView>();
+            this.Workspaces["DrinksDistributorWorkspace"].Show(_adminView, _smartPart);
 
-            parentWorkspace.Show(_adminView, _smartPart);
+            _adminView.LoadCoinStocks();
 
             this.Activate();
         }

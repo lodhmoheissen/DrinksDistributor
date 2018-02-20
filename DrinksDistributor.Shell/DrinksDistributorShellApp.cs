@@ -1,7 +1,9 @@
-﻿using DrinksDistributor.Models;
-using Microsoft.Practices.CompositeUI;
+﻿using Microsoft.Practices.CompositeUI.Collections;
+using Microsoft.Practices.CompositeUI.Commands;
 using Microsoft.Practices.CompositeUI.WinForms;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -20,9 +22,6 @@ namespace DrinksDistributor.Shell
         {
             // Ensure all our thread exceptions are handled.
             Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
-
-            // Initialize the database context.
-            //DrinksDistributorContext context = new DrinksDistributorContext();
 
             // Run the shell.
             new DrinksDistributorShellApp().Run();
@@ -44,6 +43,36 @@ namespace DrinksDistributor.Shell
         protected override void AfterShellCreated()
         {
             base.AfterShellCreated();
+
+            // DEBUG SHELL
+            //DisplaysRootItemCollections();
+        }
+
+        /// <summary>
+        /// Debug the work items hierarchy.
+        /// </summary>
+        private void DisplaysRootItemCollections()
+        {
+            Debug.WriteLine("ITEMS:");
+            ManagedObjectCollection<object> collItems = RootWorkItem.Items;
+            foreach (KeyValuePair<string, object> o in collItems)
+            {
+                Debug.WriteLine(o.ToString());
+            }
+
+            Debug.WriteLine("COMMANDS:");
+            ManagedObjectCollection<Command> collCom = RootWorkItem.Commands;
+            foreach (KeyValuePair<string, Command> o in collCom)
+            {
+                Debug.WriteLine(o.ToString());
+            }
+
+            Debug.WriteLine("SMARTPARTS:");
+            ManagedObjectCollection<object> collSmartPart = RootWorkItem.SmartParts;
+            foreach (KeyValuePair<string, object> o in collSmartPart)
+            {
+                Debug.WriteLine(o.ToString());
+            }
         }
     }
 }
