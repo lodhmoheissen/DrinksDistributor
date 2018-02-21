@@ -10,9 +10,9 @@ namespace DrinksDistributor.Models.Data
     public class DrinksDistributorDbInitializer : CreateDatabaseIfNotExists<DrinksDistributorContext>
     {
         /// <summary>
-        /// Seed the database using Code First approach and the database context.
+        /// Seed the database, using Code First approach and the database context.
         /// </summary>
-        /// <param name="context"></param>
+        /// <param name="context">EF database context</param>
         protected override void Seed(DrinksDistributorContext context)
         {
             // Coin currencies definition.

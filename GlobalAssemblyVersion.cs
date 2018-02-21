@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.InteropServices;
 
 // General Information
 [assembly: AssemblyProduct("DrinksDistributor")]

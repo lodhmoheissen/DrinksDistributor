@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DrinksDistributor.Models.Entities
 {
     /// <summary>
-    /// POCO class that represents a coin currency.
+    /// POCO class that represents a Coin Currency.
     /// </summary>
     [Table("CoinCurrency", Schema = "dbo")]
     public class CoinCurrency
@@ -35,14 +35,14 @@ namespace DrinksDistributor.Models.Entities
         public string Name { get; set; }
 
         /// <summary>
-        /// Navigation: Coin types related to this Coin Currency
+        /// Coin types related to this Coin Currency. Navigation property also.
         /// </summary>
         public virtual ICollection<CoinType> CoinTypes { get; set; }
 
         /// <summary>
-        /// Returns a string representation of the coin currrency.
+        /// Returns a string representation of the Coin Currrency.
         /// </summary>
-        /// <returns>String representation of the coin currrency.</returns>
+        /// <returns>String representation of the Coin Currrency</returns>
         public override string ToString()
         {
             return string.Format("{0}", Name);

@@ -23,13 +23,13 @@ namespace DrinksDistributor.Forms.Controllers
         /// <summary>
         /// Load the coin stocks from db.
         /// </summary>
-        /// <returns>Coin stocks from db.</returns>
+        /// <returns>Coin stocks from db</returns>
         public List<CoinStock> LoadCoinStocks()
         {
             List<CoinStock> list = new List<CoinStock>();
             using (DrinksDistributorContext dbContext = new DrinksDistributorContext())
             {
-                list = dbContext.CoinStocks.Include("CoinType").ToList();
+                list = dbContext.CoinStocks.Include("CoinType").ToList(); // 'Include' For lazyloading.
             }
             return list;
         }

@@ -21,9 +21,9 @@ namespace DrinksDistributor.Forms.WorkItems
         private TabSmartPartInfo _smartPart;
 
         /// <summary>
-        /// Generate the Admin view (smart part);
+        /// Generate the Admin view (smart part).
         /// </summary>
-        /// <param name="parentWorkspace">The Tab workspace.</param>
+        /// <param name="parentWorkspace">Tab workspace.</param>
         public void Generate(IWorkspace parentWorkspace)
         {
             // TabSmartPart

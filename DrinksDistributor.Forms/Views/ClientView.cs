@@ -2,11 +2,11 @@
 using DrinksDistributor.Models.Entities;
 using Microsoft.Practices.CompositeUI.SmartParts;
 using Microsoft.Practices.ObjectBuilder;
-using System.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
-using System;
 
 namespace DrinksDistributor.Forms.Views
 {
@@ -47,7 +47,7 @@ namespace DrinksDistributor.Forms.Views
             // Get data.
             List<Drink> allDrinks = _clientController.LoadDrinks();
 
-            // DataGridView binding.
+            // DataGridView binding, with auto resize.
             dgrdDrinks.DataSource = new BindingList<Drink>(allDrinks);
             dgrdDrinks.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
@@ -55,14 +55,14 @@ namespace DrinksDistributor.Forms.Views
             cbxSelectDrink.DataSource = new BindingList<Drink>(allDrinks);
             cbxSelectDrink.DisplayMember = "Name";
             cbxSelectDrink.ValueMember = "Id";
-            cbxSelectDrink.SelectedIndex = -1;
+            cbxSelectDrink.SelectedIndex = -1; // To fix...
         }
 
         /// <summary>
-        /// When user select a drink.
+        /// When user select a drink in combobox.
         /// </summary>
-        /// <param name="sender">Object sender.</param>
-        /// <param name="e">Event args </param>
+        /// <param name="sender">Object sender</param>
+        /// <param name="e">Event args</param>
         private void cbxSelectDrink_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             var selectedDrink = cbxSelectDrink.SelectedItem as Drink;
@@ -73,10 +73,10 @@ namespace DrinksDistributor.Forms.Views
         }
 
         /// <summary>
-        /// When client pay its drinK
+        /// When client pay its drink and wait for coin change.
         /// </summary>
         /// <param name="sender">Object sender</param>
-        /// <param name="e">Event args.</param>
+        /// <param name="e">Event args</param>
         private void btnPayDrink_Click(object sender, System.EventArgs e)
         {
             string strInputAmount = tbxInputMoney.Text;
@@ -145,7 +145,7 @@ namespace DrinksDistributor.Forms.Views
                                     }
                                 }
 
-                                // Update the stock / show message
+                                // Update the stock / show message.
                                 if (canCoinChange)
                                 {
                                     _clientController.UpdateCoinStocksQuantities(finalSolution);
@@ -156,7 +156,7 @@ namespace DrinksDistributor.Forms.Views
                                     }
                                     MessageBox.Show(finalMsg, "Coin change OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
-                                // Show error.
+                                // Show error when no coin availability.
                                 else
                                 {
                                     MessageBox.Show("Coin stock are not available to coin change", "No stocks", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -173,7 +173,7 @@ namespace DrinksDistributor.Forms.Views
                         MessageBox.Show("Bad drink selection. Maybe a bug...", "Bad drink", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else if (inputAmount > 5.00 && inputAmount <= 100.00)
+                else if (inputAmount > 5.00 && inputAmount < 100.00)
                 {
                     MessageBox.Show("A coin superior to 5 CHF?   :)", "Impossible", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

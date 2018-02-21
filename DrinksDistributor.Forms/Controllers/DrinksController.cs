@@ -23,13 +23,13 @@ namespace DrinksDistributor.Forms.Controllers
         /// <summary>
         /// Load the drinks from db.
         /// </summary>
-        /// <returns>Drinks from db.</returns>
+        /// <returns>Drinks available</returns>
         public List<Drink> LoadDrinks()
         {
             List<Drink> list = new List<Drink>();
             using (DrinksDistributorContext dbContext = new DrinksDistributorContext())
             {
-                list = dbContext.Drinks.Include("PriceCurrency").ToList();
+                list = dbContext.Drinks.Include("PriceCurrency").ToList(); // 'Include' For lazyloading.
             }
             return list;
         }

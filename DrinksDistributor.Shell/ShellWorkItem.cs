@@ -5,7 +5,5 @@ namespace DrinksDistributor.Shell
     /// <summary>
     /// WorkItem for shell.
     /// </summary>
-    public class ShellWorkItem : WorkItem
-    {
-    }
+    public class ShellWorkItem : WorkItem { }
 }

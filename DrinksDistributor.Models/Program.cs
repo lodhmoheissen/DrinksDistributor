@@ -3,8 +3,15 @@ using System.Linq;
 
 namespace DrinksDistributor.Models
 {
+    /// <summary>
+    /// Little program to test the EF model we build from CodeFirst.
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Main entry point method.
+        /// </summary>
+        /// <param name="args">Program arguments</param>
         static void Main(string[] args)
         {
             using (var db = new DrinksDistributorContext())

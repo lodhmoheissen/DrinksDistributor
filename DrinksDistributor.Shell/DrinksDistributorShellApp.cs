@@ -50,6 +50,7 @@ namespace DrinksDistributor.Shell
 
         /// <summary>
         /// Debug the work items hierarchy.
+        /// Useful for CAB issues.
         /// </summary>
         private void DisplaysRootItemCollections()
         {
@@ -73,6 +74,8 @@ namespace DrinksDistributor.Shell
             {
                 Debug.WriteLine(o.ToString());
             }
+
+            // TODO: Add more collections to monitor.
         }
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DrinksDistributor.Models.Entities
 {
     /// <summary>
-    /// POCO class that represents coin type stock for the distributor.
+    /// POCO class that represents Coin Stock for the distributor.
     /// </summary>
     [Table("CoinStock", Schema = "dbo")]
     public class CoinStock
@@ -16,14 +16,14 @@ namespace DrinksDistributor.Models.Entities
         public int Id { get; set; }
 
         /// <summary>
-        /// Coin type stock.
+        /// Coin type stock. Navigation property also.
         /// </summary>
         public int CoinTypeId { get; set; }
         [Required, ForeignKey("CoinTypeId")]
         public virtual CoinType CoinType { get; set; }
 
         /// <summary>
-        /// Quantity.
+        /// Quantity available for the coin.
         /// </summary>
         [Required]
         public int Quantity { get; set; }
@@ -31,7 +31,7 @@ namespace DrinksDistributor.Models.Entities
         /// <summary>
         /// Returns a string representation of the coin stock.
         /// </summary>
-        /// <returns>String representation of the coin stock.</returns>
+        /// <returns>String representation of the coin stock</returns>
         //public override string ToString()
         //{
         //    return string.Format("{0};[{1}];{2}", Id, CoinType, Quantity);

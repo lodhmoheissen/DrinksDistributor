@@ -10,7 +10,6 @@ namespace DrinksDistributor.Forms.Views
 {
     /// <summary>
     /// Class that represents the user control tabbed for Drinks.
-    /// Shows the drinks and their cost.
     /// </summary>
     [SmartPart]
     public partial class DrinksView : UserControl
@@ -43,10 +42,8 @@ namespace DrinksDistributor.Forms.Views
         /// </summary>
         public void LoadDrinks()
         {
-            // Get data.
+            // DataGridView binding, with auto resize.
             List<Drink> allDrinks = _drinksController.LoadDrinks();
-
-            // DataGridView binding.
             dgrdDrinks.DataSource = new BindingList<Drink>(allDrinks);
             dgrdDrinks.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }

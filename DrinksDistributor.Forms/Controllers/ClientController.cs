@@ -24,13 +24,13 @@ namespace DrinksDistributor.Forms.Controllers
         /// <summary>
         /// Load drinks from db.
         /// </summary>
-        /// <returns>Drinks available.</returns>
+        /// <returns>Drinks available</returns>
         public List<Drink> LoadDrinks()
         {
             List<Drink> list = new List<Drink>();
             using (DrinksDistributorContext dbContext = new DrinksDistributorContext())
             {
-                list = dbContext.Drinks.Include("PriceCurrency").ToList();
+                list = dbContext.Drinks.Include("PriceCurrency").ToList(); // 'Include' For lazyloading.
             }
             return list;
         }
@@ -38,21 +38,20 @@ namespace DrinksDistributor.Forms.Controllers
         /// <summary>
         /// Load coin stocks from db to calculate coin change.
         /// </summary>
-        /// <returns>Coin stocks available.</returns>
+        /// <returns>Coin stocks available</returns>
         public List<CoinStock> LoadCoinStocks()
         {
             List<CoinStock> list = new List<CoinStock>();
             using (DrinksDistributorContext dbContext = new DrinksDistributorContext())
             {
-                list = dbContext.CoinStocks.Include("CoinType").ToList();
+                list = dbContext.CoinStocks.Include("CoinType").ToList(); // 'Include' For lazyloading.
             }
             return list;
         }
 
         /// <summary>
-        /// Update coin stocks from db to calculate .
+        /// Update coin stocks quantities into db.
         /// </summary>
-        /// <returns> available.</returns>
         public void UpdateCoinStocksQuantities(Dictionary<double, int> stockToUpdate)
         {
             using (DrinksDistributorContext dbContext = new DrinksDistributorContext())
@@ -81,8 +80,8 @@ namespace DrinksDistributor.Forms.Controllers
         /// Recursively make the coin change.
         /// </summary>
         /// <param name="target">Amount to change</param>
-        /// <param name="coins">Available coins</param>
-        /// <returns></returns>
+        /// <param name="coins">Available type of coins (not quantities)</param>
+        /// <returns>A list of the solutions for coin change. A solution is a collection of coin values.</returns>
         public IEnumerable<List<double>> GetChange(double target, IQueryable<double> coins)
         {
             var availableCoins = from c in coins where c <= target select c;

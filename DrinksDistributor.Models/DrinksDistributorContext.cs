@@ -39,6 +39,8 @@ namespace DrinksDistributor.Models
         public DrinksDistributorContext() : base("DrinksDistributorDb")
         {
             InitializeDatabase();
+
+            // By default, we disable lazy loading to prevent data retrieval and exception on GUI when navigating.
             this.Configuration.LazyLoadingEnabled = false;
         }
 

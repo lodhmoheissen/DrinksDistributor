@@ -4,7 +4,7 @@ using Microsoft.Practices.ObjectBuilder;
 namespace DrinksDistributor.Shell
 {
     /// <summary>
-    /// 
+    /// CAB Module init for DrinksDistributor app/shell.
     /// </summary>
     public class DrinksDistributorModuleInit : ModuleInit
     {
@@ -16,7 +16,7 @@ namespace DrinksDistributor.Shell
         /// <summary>
         /// Main constructor.
         /// </summary>
-        /// <param name="workItem">Work item for the module.</param>
+        /// <param name="workItem">Work item for the module</param>
         [InjectionConstructor]
         public DrinksDistributorModuleInit([ServiceDependency] WorkItem workItem)
         {

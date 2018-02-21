@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace DrinksDistributor.Shell
 {
     /// <summary>
-    /// Class that represents the full GUI as a main container.
+    /// Class that represents the full CAB GUI as a main container, the shell.
     /// </summary>
     public partial class DrinksDistributorShellForm : Form
     {
@@ -35,7 +35,7 @@ namespace DrinksDistributor.Shell
         }
 
         /// <summary>
-        /// Main constructor for CAB.
+        /// Main constructor for CAB shell form.
         /// </summary>
         [InjectionConstructor]
         public DrinksDistributorShellForm(ShellWorkItem workItem, IWorkItemTypeCatalogService workItemTypeCatalog) : this()
@@ -45,7 +45,7 @@ namespace DrinksDistributor.Shell
             // Creates the CAB TabWorkspace.
             _workspace = this._rootWorkItem.Workspaces.AddNew<TabWorkspace>("DrinksDistributorWorkspace");
 
-            // Configure the TabWorkspace.
+            // Configure the TabWorkspace. It fills all the available space.
             TabWorkspace tabWorkspace = _workspace as TabWorkspace;
             tabWorkspace.Dock = DockStyle.Fill;
 
