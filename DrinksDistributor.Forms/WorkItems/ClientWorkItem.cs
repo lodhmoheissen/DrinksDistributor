@@ -26,13 +26,15 @@ namespace DrinksDistributor.Forms.WorkItems
         /// <param name="parentWorkspace">The Tab workspace.</param>
         public void Generate(IWorkspace parentWorkspace)
         {
+            // TabSmartPart
             _smartPart = new TabSmartPartInfo();
             _smartPart.Title = "Client";
             _smartPart.ActivateTab = true;
 
-            _clientView = Items.AddNew<ClientView>();
+            _clientView = this.SmartParts.AddNew<ClientView>();
+            this.Workspaces["DrinksDistributorWorkspace"].Show(_clientView, _smartPart);
 
-            parentWorkspace.Show(_clientView, _smartPart);
+            _clientView.LoadDrinks();
 
             this.Activate();
         }

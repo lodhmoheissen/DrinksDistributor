@@ -1,4 +1,6 @@
-﻿namespace DrinksDistributor.Shell
+﻿using DrinksDistributor.Shell.Helpers;
+
+namespace DrinksDistributor.Shell
 {
     partial class DrinksDistributorShellForm
     {
@@ -31,15 +33,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrinksDistributorShellForm));
             this.SuspendLayout();
             // 
-            // FormShell
+            // DrinksDistributorShellForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 544);
+            this.ClientSize = new System.Drawing.Size(1178, 544);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormShell";
+            this.Name = "DrinksDistributorShellForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DrinkDistributors 0.2";
+            this.Text = "DrinkDistributors v" + AppHelper.GetAppVersion();
             this.ResumeLayout(false);
 
         }

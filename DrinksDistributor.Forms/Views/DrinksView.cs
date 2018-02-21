@@ -1,6 +1,9 @@
 ﻿using DrinksDistributor.Forms.Controllers;
+using DrinksDistributor.Models.Entities;
 using Microsoft.Practices.CompositeUI.SmartParts;
 using Microsoft.Practices.ObjectBuilder;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace DrinksDistributor.Forms.Views
@@ -15,7 +18,7 @@ namespace DrinksDistributor.Forms.Views
         /// <summary>
         /// Drinks controller.
         /// </summary>
-        private DrinksController _controller;
+        private DrinksController _drinksController;
 
         /// <summary>
         /// Drinks controller.
@@ -23,7 +26,8 @@ namespace DrinksDistributor.Forms.Views
         [CreateNew]
         public DrinksController Controller
         {
-            set { _controller = value; }
+            get { return _drinksController; }
+            set { _drinksController = value; }
         }
 
         /// <summary>
@@ -32,6 +36,19 @@ namespace DrinksDistributor.Forms.Views
         public DrinksView()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Load drinks data to the main data grid.
+        /// </summary>
+        public void LoadDrinks()
+        {
+            // Get data.
+            List<Drink> allDrinks = _drinksController.LoadDrinks();
+
+            // DataGridView binding.
+            dgrdDrinks.DataSource = new BindingList<Drink>(allDrinks);
+            dgrdDrinks.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }
 }

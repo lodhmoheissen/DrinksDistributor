@@ -1,5 +1,4 @@
 ﻿using DrinksDistributor.Forms.WorkItems;
-using Microsoft.Practices.CompositeUI;
 using Microsoft.Practices.CompositeUI.Services;
 using Microsoft.Practices.CompositeUI.SmartParts;
 using Microsoft.Practices.CompositeUI.WinForms;
@@ -24,25 +23,6 @@ namespace DrinksDistributor.Shell
         /// Generic Workspace.
         /// </summary>
         private IWorkspace _workspace;
-
-        #endregion
-
-        #region GUI SMARTPARTS
-
-        ///// <summary>
-        ///// Admin tabbed smart part.
-        ///// </summary>
-        //private AdminSmartPart _adminSmartPart;
-
-        ///// <summary>
-        ///// Drinks tabbed smart part.
-        ///// </summary>
-        //private DrinksSmartPart _drinksSmartPart;
-
-        ///// <summary>
-        ///// Client tabbed smart part.
-        ///// </summary>
-        //private ClientSmartPart _clientSmartPart;
 
         #endregion
 

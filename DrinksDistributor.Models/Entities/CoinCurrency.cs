@@ -45,7 +45,8 @@ namespace DrinksDistributor.Models.Entities
         /// <returns>String representation of the coin currrency.</returns>
         public override string ToString()
         {
-            return string.Format("{0};{1};{2};{3}", Id, IsoCode3, Symbol, Name);
+            return string.Format("{0}", Name);
+            //return string.Format("{0};{1};{2};{3}", Id, IsoCode3, Symbol, Name);
         }
     }
 }
