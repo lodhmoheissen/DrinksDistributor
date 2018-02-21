@@ -63,6 +63,7 @@
             this.btnRefreshCoinStocks.TabIndex = 4;
             this.btnRefreshCoinStocks.Text = "Refresh";
             this.btnRefreshCoinStocks.UseVisualStyleBackColor = true;
+            this.btnRefreshCoinStocks.Click += new System.EventHandler(this.btnRefreshCoinStocks_Click);
             // 
             // AdminView
             // 

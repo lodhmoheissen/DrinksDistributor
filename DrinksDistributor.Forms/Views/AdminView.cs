@@ -42,12 +42,15 @@ namespace DrinksDistributor.Forms.Views
         /// </summary>
         public void LoadCoinStocks()
         {
-            // Get data.
-            List<CoinStock> allCoinStocks = _adminController.LoadCoinStocks();
-
             // DataGridView binding.
+            List<CoinStock> allCoinStocks = _adminController.LoadCoinStocks();
             dgrdCoinStocks.DataSource = new BindingList<CoinStock>(allCoinStocks);
             dgrdCoinStocks.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        private void btnRefreshCoinStocks_Click(object sender, System.EventArgs e)
+        {
+            LoadCoinStocks();
         }
     }
 }
