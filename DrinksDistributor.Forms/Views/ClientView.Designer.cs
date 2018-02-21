@@ -35,7 +35,7 @@
             this.lblAmountMoneyDrink = new System.Windows.Forms.Label();
             this.tbxAmountMoneyDrink = new System.Windows.Forms.TextBox();
             this.lblPutMoney = new System.Windows.Forms.Label();
-            this.tbxPutMoney = new System.Windows.Forms.TextBox();
+            this.tbxInputMoney = new System.Windows.Forms.TextBox();
             this.btnPayDrink = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrdDrinks)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +77,7 @@
             this.cbxSelectDrink.Name = "cbxSelectDrink";
             this.cbxSelectDrink.Size = new System.Drawing.Size(433, 28);
             this.cbxSelectDrink.TabIndex = 3;
+            this.cbxSelectDrink.SelectedIndexChanged += new System.EventHandler(this.cbxSelectDrink_SelectedIndexChanged);
             // 
             // lblAmountMoneyDrink
             // 
@@ -107,15 +108,14 @@
             this.lblPutMoney.TabIndex = 6;
             this.lblPutMoney.Text = "Put your money:";
             // 
-            // tbxPutMoney
+            // tbxInputMoney
             // 
-            this.tbxPutMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPutMoney.Location = new System.Drawing.Point(384, 359);
-            this.tbxPutMoney.Name = "tbxPutMoney";
-            this.tbxPutMoney.Size = new System.Drawing.Size(314, 26);
-            this.tbxPutMoney.TabIndex = 7;
-            this.tbxPutMoney.Text = "(Select a Drink)";
-            this.tbxPutMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxInputMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxInputMoney.Location = new System.Drawing.Point(384, 359);
+            this.tbxInputMoney.Name = "tbxInputMoney";
+            this.tbxInputMoney.Size = new System.Drawing.Size(314, 26);
+            this.tbxInputMoney.TabIndex = 7;
+            this.tbxInputMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnPayDrink
             // 
@@ -125,6 +125,7 @@
             this.btnPayDrink.TabIndex = 8;
             this.btnPayDrink.Text = "Pay Drink";
             this.btnPayDrink.UseVisualStyleBackColor = true;
+            this.btnPayDrink.Click += new System.EventHandler(this.btnPayDrink_Click);
             // 
             // ClientView
             // 
@@ -132,7 +133,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.btnPayDrink);
-            this.Controls.Add(this.tbxPutMoney);
+            this.Controls.Add(this.tbxInputMoney);
             this.Controls.Add(this.lblPutMoney);
             this.Controls.Add(this.tbxAmountMoneyDrink);
             this.Controls.Add(this.lblAmountMoneyDrink);
@@ -157,7 +158,7 @@
         private System.Windows.Forms.Label lblAmountMoneyDrink;
         private System.Windows.Forms.TextBox tbxAmountMoneyDrink;
         private System.Windows.Forms.Label lblPutMoney;
-        private System.Windows.Forms.TextBox tbxPutMoney;
+        private System.Windows.Forms.TextBox tbxInputMoney;
         private System.Windows.Forms.Button btnPayDrink;
     }
 }

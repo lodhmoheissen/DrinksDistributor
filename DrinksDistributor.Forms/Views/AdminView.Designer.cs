@@ -30,6 +30,7 @@
         {
             this.dgrdCoinStocks = new System.Windows.Forms.DataGridView();
             this.lblForGridCoinStocks = new System.Windows.Forms.Label();
+            this.btnRefreshCoinStocks = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrdCoinStocks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,15 +55,25 @@
             this.lblForGridCoinStocks.TabIndex = 2;
             this.lblForGridCoinStocks.Text = "List of Coin stocks available:";
             // 
+            // btnRefreshCoinStocks
+            // 
+            this.btnRefreshCoinStocks.Location = new System.Drawing.Point(454, 403);
+            this.btnRefreshCoinStocks.Name = "btnRefreshCoinStocks";
+            this.btnRefreshCoinStocks.Size = new System.Drawing.Size(200, 50);
+            this.btnRefreshCoinStocks.TabIndex = 4;
+            this.btnRefreshCoinStocks.Text = "Refresh";
+            this.btnRefreshCoinStocks.UseVisualStyleBackColor = true;
+            // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnRefreshCoinStocks);
             this.Controls.Add(this.dgrdCoinStocks);
             this.Controls.Add(this.lblForGridCoinStocks);
             this.Name = "AdminView";
-            this.Size = new System.Drawing.Size(1100, 400);
+            this.Size = new System.Drawing.Size(1100, 466);
             ((System.ComponentModel.ISupportInitialize)(this.dgrdCoinStocks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -73,5 +84,6 @@
 
         private System.Windows.Forms.DataGridView dgrdCoinStocks;
         private System.Windows.Forms.Label lblForGridCoinStocks;
+        private System.Windows.Forms.Button btnRefreshCoinStocks;
     }
 }
